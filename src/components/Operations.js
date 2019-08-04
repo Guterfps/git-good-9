@@ -9,6 +9,7 @@ class Operations extends Component{
             vendor:'',
             category:''
         }
+        this.ahi=false
     }
     Transcation=(event)=>{
         const target=event.target
@@ -22,11 +23,12 @@ class Operations extends Component{
   this.props.addtTranscation(this.state)
     }
     WithdrawTranscation=()=>{
+        this.props.balance-this.state.amount>500 ?
         this.props.addtTranscation({
             amount:-this.state.amount,
             vendor:this.state.vendor,
             category:this.state.category
-        })
+        }) : this.ahi=true
     }
     
     render(){
@@ -37,6 +39,7 @@ class Operations extends Component{
                 <input name='category' type='text' placeholder='Category' onChange={this.Transcation} value={this.state.category}></input>
                 <button onClick={this.DepositTranscation}>Deposit</button>
                 <button onClick={this.WithdrawTranscation}>Withdraw</button>
+                <div>{this.ahi ? 'Insufficient Funds' :null}</div>
             </div>
         )
     }

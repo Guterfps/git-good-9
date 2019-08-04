@@ -30,7 +30,7 @@ async componentDidMount(){
 }
   addtTranscation=async (Transcation)=>{
  await axios.post('http://localhost:8000/transaction',Transcation)
-  this.componentDidMount()
+  this.componentDidMount() 
   // let Data=[...this.state.data]
   // Data.push(Transcation)
   
@@ -45,7 +45,7 @@ render(){
   <div>
     <span className='balance'>{this.balance()}</span>
     <div><Transcations data={this.state.data} /></div>
-    <Operations addtTranscation={this.addtTranscation} />
+    <Operations addtTranscation={this.addtTranscation} balance={this.balance()} />
   </div>
   )
 }
