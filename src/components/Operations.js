@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+
 
 class Operations extends Component{
     constructor(){
@@ -28,9 +28,7 @@ class Operations extends Component{
             category:this.state.category
         })
     }
-    // async componentDidMount(){
-    //   await  axios.post('http://localhost:8000/transaction',this.state)
-    // }
+    
     render(){
         return(
             <div>

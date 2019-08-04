@@ -4,6 +4,7 @@ import Transcations from './components/Transcations'
 import './App.css';
 import axios from 'axios'
 
+
 class App extends Component{
 constructor(){
   super()
@@ -27,8 +28,9 @@ async componentDidMount(){
   console.log(res.data)
   this.setState({data: res.data})
 }
- addtTranscation=(Transcation)=>{
-  axios.post('http://localhost:8000/transaction',Transcation)
+  addtTranscation=async (Transcation)=>{
+ await axios.post('http://localhost:8000/transaction',Transcation)
+  this.componentDidMount()
   // let Data=[...this.state.data]
   // Data.push(Transcation)
   
